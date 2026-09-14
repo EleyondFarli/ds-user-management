@@ -1,0 +1,34 @@
+<div class="card">
+  <form class="form" [formGroup]="editForm" novalidate>
+    <div class="names">
+      <span class="fname p-input-icon-left">
+        <i class="pi pi-user"></i>
+        <input formControlName="firstName" type="text" placeholder="First Name"
+               class="p-inputtext p-component p-element"/>
+      </span>
+      <span class="lname p-input-icon-left">
+        <i class="pi pi-user"></i>
+        <input formControlName="lastName" type="text" placeholder="Last Name"
+               class="p-inputtext p-component p-element"/>
+      </span>
+
+
+      <span class="">
+        <i class="pi pi-user"></i>
+        <input formControlName="role" type="text" placeholder="{{'role'}}"
+               class="input-details p-inputtext p-component p-element"/>
+      </span>
+
+    </div>
+
+
+    <div class="div-btn">
+      <button [disabled]="!editForm.valid" pButton class="btn-create" type="submit" (click)="onSaveUpdate()">Edit</button>
+      <button (click)="onCloseClick()" icon="pi-times" label="Close" style="background-color: #f44336"
+              class="btn-reset p-element p-button-danger p-button p-component">
+        <span class="p-button-icon p-button-icon-left pi pi-times" aria-hidden="true"></span>
+        <span class="p-button-label">Cancel </span>
+      </button>
+    </div>
+  </form>
+</div>

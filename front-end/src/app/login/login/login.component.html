@@ -1,0 +1,55 @@
+<body>
+<div class="bg-img">
+  <div class="content">
+    <header class="login">Login</header>
+
+    <div *ngIf="loginFailed">
+      <p class="result" >
+        {{ error }}
+      </p>
+    </div>
+
+    <form [formGroup]="loginForm" novalidate>
+      <div class="field">
+        <span class="fas fa-user"></span>
+
+        <input
+          class="input"
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="field">
+        <span class="fas fa-lock"></span>
+
+        <input
+          class="input input-pass"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          #password
+        />
+
+        <i #show (click)="changePassType()" class="show pi pi-eye"></i>
+      </div>
+      <div class="field">
+        <input
+          (click)="onSubmit()"
+          class="input input-submit"
+          type="button"
+          name="login"
+          value="Login"
+        />
+      </div>
+      <p>
+        Don't have an account?
+      </p>
+      <p class="p2">
+        Try contacting an administrator!
+      </p>
+    </form>
+  </div>
+</div>
+</body>

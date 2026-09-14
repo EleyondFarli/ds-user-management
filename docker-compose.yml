@@ -1,0 +1,42 @@
+version: "3"
+services:
+  device-management:
+    build:
+      dockerfile: management/Dockerfile
+      context: .
+    volumes:
+      - ./device-management:/myapp
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql_db
+      - user-management
+  mysql_db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: "root"
+    volumes:
+      - ./user-management/tmp/mysqldb:/var/lib/mysql
+    ports:
+      - "3307:3306"
+  user-management:
+    build:
+      dockerfile: user-management/Dockerfile
+      context: .
+    volumes:
+      - ./user-management:/myapp
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql_db
+  front-end:
+    build:
+      dockerfile: front-end/Dockerfile
+      context: .
+    volumes:
+      - ./front-end:/myapp
+    ports:
+      - "4200:80"
+    depends_on:
+      - user-management

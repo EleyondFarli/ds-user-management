@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Save User</h2>
+  <!-- Input fields for user details -->
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" [(ngModel)]="firstName" type="text" required>
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" [(ngModel)]="lastName" type="text" required>
+  </div>
+  <div>
+    <label for="username">Username:</label>
+    <input id="username" [(ngModel)]="username" type="text" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" [(ngModel)]="password" type="password" required>
+  </div>
+  <div>
+    <label for="role">Role:</label>
+    <input id="role" [(ngModel)]="role" type="text" required>
+  </div>
+
+  <!-- Save button -->
+  <button mat-raised-button color="accent" (click)="saveUser()">Save User</button>
+</div>

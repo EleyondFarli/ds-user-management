@@ -1,0 +1,165 @@
+body {
+  padding: 0;
+  margin: -8px;
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url(./loginbg.jpg);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.bg-img:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.3);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  height: 350px;
+
+  width: 470px;
+  padding: 85px 32px 90px 32px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: -1px 3px 28px 0px rgba(0, 0, 0, 0.8);
+}
+
+header {
+  color: white;
+  font-size: 33px;
+  font-weight: bold;
+  margin: 0 0 -30px 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100px;
+}
+
+.login {
+  margin-top: -70px;
+}
+
+.form {
+  margin-top: 60px;
+}
+
+.field {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgb(255, 255, 255, 0.94);
+  margin-bottom: 10px;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-pass {
+  position: relative;
+}
+
+span {
+  color: #222;
+  width: 40px;
+  line-height: 45px;
+  margin: auto;
+}
+
+.forgot-pass {
+  margin-bottom: 10px;
+}
+
+.fg-pass {
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-submit {
+  background: rgba(150, 16, 16, 0.733);
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.input-submit:hover {
+  letter-spacing: 2px;
+}
+
+.input-submit:active {
+  background-color: rgba(150, 16, 16);
+  font-size: smaller;
+  letter-spacing: 4px;
+}
+
+.show {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin-top: 15px;
+}
+
+.signup {
+  color: wheat;
+  cursor: pointer;
+}
+
+.signup:hover {
+  color: orangered;
+  text-decoration: none;
+}
+
+.signup:active {
+  padding-left: 18px;
+  font-size: smaller;
+  text-decoration: none;
+}
+
+.result {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: -27px;
+
+  left: 0;
+  right: 0;
+  color: red;
+}
+
+.p2{
+  margin-top: -3px;
+  color: white;
+}
+
+.div-captcha{
+  margin-top: -5px;
+  margin-left: 12%
+}

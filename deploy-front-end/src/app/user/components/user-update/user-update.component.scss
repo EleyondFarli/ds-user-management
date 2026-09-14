@@ -1,0 +1,84 @@
+.card{
+  position: relative;
+  height: 535px;
+  width: 1200px;
+  border: 1px solid rgb(210,210,210);
+  border-radius: 20px;
+}
+
+.names{
+  width: 75%;
+  margin-top: 30px;
+  margin-left: 81px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fname, .lname{
+  width: 223px;
+  margin-top: 30px;
+}
+
+.div-details{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 81px;
+}
+
+.span-details{
+  margin-bottom: 20px;
+}
+
+.input-details{
+  width: calc(85% - 1px);
+}
+
+.roles{
+  margin-left: 81px;
+}
+
+.isActive{
+  position: absolute;
+  right: 83%;
+  margin-top: 25px;
+}
+
+.div-btn{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 81px;
+  margin-top: 20px;
+  padding-top: 135px;
+}
+
+.btn-reset{
+  margin-right: 100px;
+  margin-top: -2px;
+}
+
+.close-btn{
+  margin-right: 15%;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(33, 150, 243, 0.65);
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #2196F3;
+}
+
+.msg-toggle{
+  position: absolute;
+  right: 73%;
+  margin-top: 65px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: normal;
+}
+

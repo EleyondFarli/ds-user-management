@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <!-- Displayed Columns -->
+      <ng-container matColumnDef="firstName">y
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{"firstName" | titlecase}} </th>
+        <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+      </ng-container>
+
+      <!-- Lastname Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"lastName" | titlecase}}</th>
+        <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+      </ng-container>
+
+      <!-- Username Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{"username" | titlecase}} </th>
+        <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{"role" | titlecase}} </th>
+        <td mat-cell *matCellDef="let user"> {{user.role}} </td>
+      </ng-container>
+
+      <!-- Edit button Column -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>{{"Edit" | titlecase}}</th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-icon-button matTooltip='{{"Edit" | titlecase}}'  class="iconbutton" color="primary"
+                  (click)="openPopupUpdate(user)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Active button Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>{{"delete" | titlecase}}</th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-icon-button matTooltip='{{"delete" | titlecase}}'  class="iconbutton" color="warn"
+                  (click)="deleteUser(user)">
+            <mat-icon aria-label="delete">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Active button Column -->
+      <ng-container matColumnDef="devices">
+        <th mat-header-cell *matHeaderCellDef>{{"Devices" | titlecase}}</th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-icon-button matTooltip='{{"Devices" | titlecase}}'  class="iconbutton" aria-label="Example icon button with a vertical three dot icon"
+                  (click)="showDevices(user)">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <!-- Data Rows -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[25, 10, 5]" aria-label="Select page of users"></mat-paginator>
+  </div>
+
+  <div *ngIf="deviceList.length > 0">
+    <h2>Device List</h2>
+    <ul>
+      <li *ngFor="let device of deviceList">
+        ID:{{ device.deviceID }} - {{ device.description }} - Address:{{ device.address }} - {{device.maxHourlyEnergyConsumption}}
+        <!-- Add more properties as needed -->
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="deviceList.length === 0">
+    <p>No devices found for this user.</p>
+  </div>
+
+  <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+
+
+</div>
+
